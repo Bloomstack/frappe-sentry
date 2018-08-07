@@ -21,10 +21,10 @@ app_include_js = ["https://cdn.ravenjs.com/3.18.1/raven.min.js",
 
 # include js, css files in header of web template
 # web_include_css = "/assets/sentry/css/sentry.css"
-web_include_js = ["https://cdn.ravenjs.com/3.18.1/raven.min.js",
-                    "/assets/sentry/js/sentry.js"]
+# web_include_js = ["https://cdn.ravenjs.com/3.18.1/raven.min.js",
+#                     "/assets/sentry/js/sentry.js"]
 
-error_handlers = ["sentry.utils.handle"]
+exception_handlers = ["sentry.utils.handle"]
 
 boot_session = "sentry.boot.boot_session"
 
