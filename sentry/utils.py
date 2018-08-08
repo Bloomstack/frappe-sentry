@@ -1,14 +1,21 @@
 import frappe
 from raven import Client
+from raven.transport.http import HTTPTransport
+from raven.transport.threaded import ThreadedHTTPTransport
 
-
-def handle():
+def handle(async=True):
     sentry_dsn = frappe.db.get_single_value("Sentry Settings", "sentry_dsn")
 
     if not sentry_dsn:
         return
 
-    client = Client(sentry_dsn)
+    if async:
+        transport = ThreadedHTTPTransport
+    else:
+        transport = HTTPTransport
+
+
+    client = Client(sentry_dsn, transport=transport)
     if not frappe.conf.get("developer_mode"):
         client.user_context({
             'email': frappe.session.user,
