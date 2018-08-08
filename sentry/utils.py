@@ -22,3 +22,7 @@ def handle(async=True):
             'site' : frappe.local.site
         })
         client.captureException()
+
+@frappe.whitelist(allow_guest=True)
+def get_sentry_dsn():
+    return frappe.db.get_single_value("Sentry Settings", "sentry_dsn")
