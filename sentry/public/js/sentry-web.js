@@ -3,7 +3,9 @@ frappe.ready(function () {
         frappe.call({
             method: "sentry.utils.get_sentry_dsn",
             callback: function (r) {
-                window.localStorage.sentry_dsn = r.message
+                if(r.message){
+                    window.localStorage.sentry_dsn = r.message
+                }
             }
         })
     }
