@@ -16,7 +16,7 @@ app_license = "MIT"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/sentry/css/sentry.css"
-app_include_js = ["https://cdn.ravenjs.com/3.18.1/raven.min.js",
+app_include_js = ["https://browser.sentry-cdn.com/4.3.0/bundle.min.js",
                     "/assets/sentry/js/sentry.js"]
 
 # include js, css files in header of web template
