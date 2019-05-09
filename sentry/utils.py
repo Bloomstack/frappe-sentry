@@ -16,7 +16,13 @@ def handle(async=True):
 
 
     client = Client(sentry_dsn, transport=transport)
-    if not frappe.conf.get("developer_mode"):
+    enabled = True
+    if frappe.conf.get("developer_mode"):
+        # You can set this in site_config.json
+        # ... enable_sentry_developer_mode: 1 ...
+        enabled = frappe.conf.get("enable_sentry_developer_mode", False)
+
+    if enabled:
         client.user_context({
             'email': frappe.session.user,
             'site' : frappe.local.site

@@ -25,6 +25,8 @@ app_include_js = ["https://cdn.ravenjs.com/3.18.1/raven.min.js",
 #                     "/assets/sentry/js/sentry-web.js"]
 
 exception_handlers = ["sentry.utils.handle"]
+# custom handler to report exceptions without necessarily breaking system flow
+error_capture_log = ["sentry.utils.handle"]
 
 boot_session = "sentry.boot.boot_session"
 
