@@ -1,2 +1,2 @@
 frappe
-raven
+sentry-sdk
