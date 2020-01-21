@@ -84,7 +84,7 @@ class HttpTransport(Transport):
 				self._send_event(event)
 
 
-def handle(async=True):
+def handle():
 	sentry_dsn = frappe.db.get_single_value("Sentry Settings", "sentry_dsn")
 
 	if not sentry_dsn:
