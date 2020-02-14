@@ -88,6 +88,9 @@ def handle():
 	sentry_dsn = frappe.db.get_single_value("Sentry Settings", "sentry_dsn")
 
 	if not sentry_dsn:
+		sentry_dsn = frappe.conf.get("sentry_dsn")
+
+	if not sentry_dsn:
 		return
 
 	sentry_sdk.init(
