@@ -1,0 +1,15 @@
+{
+  "name": "sentry",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DigiThinkIT/frappe-sentry.git"
+  },
+  "author": "Bloomstack Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DigiThinkIT/frappe-sentry/issues"
+  },
+  "dependencies": {
+    "@sentry/browser": "^5.21.3"
+  }
+}

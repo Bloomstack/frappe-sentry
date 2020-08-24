@@ -1,0 +1,6 @@
+{
+	"js/sentry.min.js": [
+		"public/js/sentry.js",
+		"public/js/sentry-web.js"
+	]
+}
