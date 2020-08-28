@@ -85,11 +85,7 @@ class HttpTransport(Transport):
 
 
 def handle():
-	sentry_dsn = frappe.db.get_single_value("Sentry Settings", "sentry_dsn")
-
-	if not sentry_dsn:
-		sentry_dsn = frappe.conf.get("sentry_dsn")
-
+	sentry_dsn = get_sentry_dsn()
 	if not sentry_dsn:
 		return
 
@@ -117,4 +113,7 @@ def handle():
 
 @frappe.whitelist(allow_guest=True)
 def get_sentry_dsn():
-	return frappe.db.get_single_value("Sentry Settings", "sentry_dsn")
+	sentry_dsn = frappe.conf.get("sentry_dsn")
+	if not sentry_dsn:
+		sentry_dsn = frappe.db.get_single_value("Sentry Settings", "sentry_dsn")
+	return sentry_dsn
