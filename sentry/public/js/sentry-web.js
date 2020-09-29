@@ -1,3 +1,5 @@
+import { init, configureScope } from '@sentry/browser';
+
 frappe.ready(function () {
 	if (!window.sentry_dsn) {
 		frappe.call({
@@ -11,12 +13,12 @@ frappe.ready(function () {
 	}
 
 	if (window.localStorage.sentry_dsn) {
-		Sentry.init({ "dsn": window.localStorage.sentry_dsn });
+		init({ dsn: window.localStorage.sentry_dsn });
 
 		if (frappe.sid != "Guest") {
-			Sentry.configureScope(function (scope) {
-				scope.setUser({ "email": frappe.user_id });
+			configureScope(function (scope) {
+				scope.setUser({ email: frappe.user_id });
 			});
 		}
 	}
-});
+})

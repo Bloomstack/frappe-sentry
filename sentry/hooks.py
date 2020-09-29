@@ -16,17 +16,11 @@ app_license = "MIT"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/sentry/css/sentry.css"
-app_include_js = [
-	"https://browser.sentry-cdn.com/5.12.1/bundle.min.js",
-	"/assets/sentry/js/sentry.js"
-]
+app_include_js = "/assets/js/sentry.min.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/sentry/css/sentry.css"
-# web_include_js = [
-# 	"https://browser.sentry-cdn.com/5.12.1/bundle.min.js",
-# 	"/assets/sentry/js/sentry-web.js"
-# ]
+web_include_js = "/assets/js/sentry-web.min.js"
 
 exception_handlers = ["sentry.utils.handle"]
 # custom handler to report exceptions without necessarily breaking system flow
