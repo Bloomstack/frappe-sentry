@@ -1,4 +1,4 @@
-import { init, configureScope } from '@sentry/browser';
+import * as Sentry from '@sentry/browser';
 
 frappe.ready(function () {
 	if (!window.sentry_dsn) {
@@ -13,10 +13,10 @@ frappe.ready(function () {
 	}
 
 	if (window.localStorage.sentry_dsn) {
-		init({ dsn: window.localStorage.sentry_dsn });
+		Sentry.init({ dsn: window.localStorage.sentry_dsn });
 
 		if (frappe.sid != "Guest") {
-			configureScope(function (scope) {
+			Sentry.configureScope(function (scope) {
 				scope.setUser({ email: frappe.user_id });
 			});
 		}
