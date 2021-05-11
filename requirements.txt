@@ -1,2 +1,2 @@
-frappe
+# frappe   # https://github.com/frappe/frappe is installed during bench-init
 sentry-sdk
