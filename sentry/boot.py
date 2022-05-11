@@ -1,5 +1,5 @@
 import frappe
-from .utils import get_sentry_dsn
+from sentry.utils import get_sentry_dsn
 
 
 def boot_session(bootinfo):

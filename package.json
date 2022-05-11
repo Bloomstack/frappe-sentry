@@ -2,15 +2,14 @@
   "name": "sentry",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DigiThinkIT/frappe-sentry.git"
+    "url": "git+https://github.com/agritheory/frappe-sentry.git"
   },
-  "author": "Bloomstack Inc.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DigiThinkIT/frappe-sentry/issues"
+    "url": "https://github.com/agritheory/frappe-sentry/issues"
   },
   "dependencies": {
-    "@sentry/browser": "^6.1.0",
-    "@sentry/tracing": "^6.1.0"
+    "@sentry/browser": "^6.19.7",
+    "@sentry/tracing": "^6.19.7"
   }
 }
