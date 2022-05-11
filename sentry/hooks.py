@@ -23,7 +23,7 @@ app_include_js = "/assets/js/sentry.min.js"
 web_include_js = "/assets/js/sentry-web.min.js"
 
 
-boot_session = "sentry.boot.boot_session"
+boot_session = "sentry.sentry.boot.boot_session"
 
 # include js in page
 # page_js = {"page" : "public/js/file.js"}

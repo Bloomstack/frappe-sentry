@@ -12,13 +12,12 @@ def init_sentry():
 		sentry_sdk.init(sentry_dsn, integrations=[RqIntegration()])
 
 
-def capture_exception():
-	print('capture exception')
+def capture_exception(message=None, title=None):
 	init_sentry()
 	with sentry_sdk.configure_scope() as scope:
 		scope.user = {"email": frappe.session.user}
 		scope.set_tag("site", frappe.local.site)
-		scope.set_tag("project", "crt-test")
+		scope.set_tag("project", frappe.local.sentry_project or frappe.local.site)
 	sentry_sdk.capture_exception()
 
 
