@@ -10,6 +10,6 @@
     "url": "https://github.com/DigiThinkIT/frappe-sentry/issues"
   },
   "dependencies": {
-    "@sentry/browser": "^6.5.1"
+    "@sentry/browser": "^7.119.1"
   }
 }
